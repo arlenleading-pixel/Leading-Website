@@ -994,37 +994,116 @@ footer {
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
+  /* HERO */
   #hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 4rem 1.5rem 3rem; }
-  .hero-right { height: 300px; }
-  .hero-stats { gap: 1.5rem; }
+  .hero-left { padding: 5rem 1.5rem 2rem; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-desc { font-size: 0.9rem; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions a { text-align: center; }
+  .hero-stats { gap: 1.2rem; flex-wrap: wrap; }
+  .stat-num { font-size: 1.6rem; }
 
-  #servicios { padding: 5rem 1.5rem; }
+  /* Hero cards — horizontal scroll on mobile */
+  .hero-right {
+    height: auto;
+    padding: 1.5rem 1rem;
+    background: var(--teal-pale);
+    overflow-x: auto;
+  }
+  .hero-card-stack {
+    position: relative;
+    top: auto; left: auto;
+    transform: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+  .hero-card-stack::-webkit-scrollbar { display: none; }
+  .hero-card {
+    min-width: 220px;
+    margin-left: 0 !important;
+    flex-shrink: 0;
+    animation: none;
+    transform: none !important;
+  }
+
+  /* Servicios */
+  #servicios { padding: 4rem 1.5rem; }
   .servicios-header { grid-template-columns: 1fr; gap: 1.5rem; }
   .servicios-grid { grid-template-columns: 1fr 1fr; }
 
-  #porque { padding: 5rem 1.5rem; }
-  .porque-inner { grid-template-columns: 1fr; gap: 3rem; }
+  /* Porque */
+  #porque { padding: 4rem 1.5rem; }
+  .porque-inner { grid-template-columns: 1fr; gap: 2rem; }
 
-  #planes { padding: 5rem 1.5rem; }
+  /* Planes */
+  #planes { padding: 4rem 1.5rem; }
   .planes-grid { grid-template-columns: 1fr 1fr; }
 
-  #proceso { padding: 5rem 1.5rem; }
+  /* Proceso */
+  #proceso { padding: 4rem 1.5rem; }
   .proceso-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .proceso-steps::before { display: none; }
 
-  #contacto { padding: 5rem 1.5rem; }
-  .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
+  /* Custom plan */
+  #custom-plan { padding: 4rem 1.5rem; }
+  .services-selector { grid-template-columns: 1fr 1fr; }
+  .custom-footer { flex-direction: column; align-items: stretch; }
+  .custom-cta { justify-content: center; }
 
+  /* Contacto */
+  #contacto { padding: 4rem 1.5rem; }
+  .contacto-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .contacto-form { padding: 1.5rem; }
+
+  /* Footer */
   footer { padding: 2.5rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .footer-links { flex-wrap: wrap; gap: 1rem; }
 
   .form-row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 580px) {
+  /* Hero */
+  .hero-left { padding: 4.5rem 1.2rem 2rem; }
+  .hero-title { font-size: 1.9rem; }
+  .hero-stats { justify-content: flex-start; }
+
+  /* Grids to single column */
   .servicios-grid { grid-template-columns: 1fr; }
   .planes-grid { grid-template-columns: 1fr; }
   .proceso-steps { grid-template-columns: 1fr; }
+  .services-selector { grid-template-columns: 1fr; }
+
+  /* Hero cards vertical on very small screens */
+  .hero-card-stack { flex-direction: column; }
+  .hero-card { min-width: unset; }
+
+  /* Section titles */
+  .section-title { font-size: 1.7rem; }
+
+  /* Plans */
+  .plan-price-usd { font-size: 2.2rem; }
+  .currency-switch { width: 100%; }
+  .currency-switch button { flex: 1; }
+
+  /* porque nums */
+  .porque-num { font-size: 1.5rem; }
+
+  /* Proceso */
+  .paso-num { width: 44px; height: 44px; }
+
+  /* Contact form */
+  .contacto-form { padding: 1.2rem; }
+  .whatsapp-btn { width: 100%; justify-content: center; }
+
+  /* Footer */
+  .footer-links { gap: 0.8rem; }
 }
 
 /* ── SCROLL ANIMATIONS ── */
