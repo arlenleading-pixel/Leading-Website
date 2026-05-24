@@ -1038,6 +1038,157 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── ARMÁ TU PLAN ── */
+#custom-plan {
+  padding: 7rem 5rem;
+  background: var(--teal-pale);
+}
+
+.custom-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.custom-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.custom-header .section-label { justify-content: center; }
+.custom-header .section-desc { margin: 0 auto; text-align: center; max-width: 520px; }
+
+.services-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.service-item {
+  background: white;
+  border: 1.5px solid var(--border);
+  padding: 1.2rem 1.4rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  position: relative;
+  border-radius: 2px;
+  user-select: none;
+}
+
+.service-item:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.service-item.selected {
+  border-color: var(--teal);
+  background: var(--teal-pale);
+}
+
+.service-item.selected .service-check {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: white;
+}
+
+.service-check {
+  width: 20px; height: 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 1px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all 0.2s;
+  color: transparent;
+  font-weight: 700;
+}
+
+.service-info {}
+
+.service-item-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--carbon);
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+.service-item-desc {
+  font-size: 0.72rem;
+  color: var(--carbon-lite);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.custom-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: white;
+  border: 1.5px solid var(--border);
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+}
+
+.custom-selected-count {
+  font-size: 0.82rem;
+  color: var(--carbon-lite);
+  font-weight: 300;
+}
+
+.custom-selected-count strong {
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.custom-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #25d366;
+  color: white;
+  padding: 0.9rem 2rem;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.custom-cta:hover { background: #1da851; transform: translateY(-1px); }
+.custom-cta:disabled, .custom-cta.disabled { background: var(--border); color: var(--carbon-lite); cursor: not-allowed; transform: none; }
+
+.select-hint {
+  font-size: 0.72rem;
+  color: var(--carbon-lite);
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  #custom-plan { padding: 5rem 1.5rem; }
+  .services-selector { grid-template-columns: 1fr 1fr; }
+  .custom-footer { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 580px) {
+  .services-selector { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -1052,6 +1203,7 @@ footer {
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#porque">Nosotros</a></li>
     <li><a href="#planes">Planes</a></li>
+    <li><a href="#custom-plan">Plan a medida</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#contacto" class="nav-cta">Contactar</a></li>
   </ul>
@@ -1236,14 +1388,14 @@ footer {
       <div class="plan-accent"></div>
       <div class="plan-name">Starter</div>
       <div class="plan-tagline">"Primeros pasos con orden"</div>
-      <div class="plan-price-usd"><sup>$</sup>280<small style="font-size:1rem;color:var(--carbon-lite);font-family:'DM Sans',sans-serif;font-weight:300;">/mes</small></div>
-      <div class="plan-price-crc">₡145,600 / mes</div>
+      <div class="plan-price-usd"><sup>$</sup>340<small style="font-size:1rem;color:var(--carbon-lite);font-family:'DM Sans',sans-serif;font-weight:300;">/mes</small></div>
+      <div class="plan-price-crc">₡176,800 / mes</div>
       <div class="plan-iva">+ IVA (13%)</div>
       <div class="plan-hours"><span class="dot"></span>Hasta 15 horas/mes</div>
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>Facturación GTI — 15 documentos</li>
-        <li>Gestión de agenda y correo (3 días/sem)</li>
+        <li>Gestión de agenda y correo (3 días/sem · máx. 15 correos/mes)</li>
         <li>Control básico de proveedores (hasta 10)</li>
         <li>Organización de archivos digitales</li>
         <li>Soporte administrativo base — 4 hrs</li>
@@ -1256,14 +1408,14 @@ footer {
       <div class="plan-accent"></div>
       <div class="plan-name">Básico</div>
       <div class="plan-tagline">"Libertad operativa"</div>
-      <div class="plan-price-usd"><sup>$</sup>480<small style="font-size:1rem;color:var(--carbon-lite);font-family:'DM Sans',sans-serif;font-weight:300;">/mes</small></div>
-      <div class="plan-price-crc">₡249,600 / mes</div>
+      <div class="plan-price-usd"><sup>$</sup>485<small style="font-size:1rem;color:var(--carbon-lite);font-family:'DM Sans',sans-serif;font-weight:300;">/mes</small></div>
+      <div class="plan-price-crc">₡252,200 / mes</div>
       <div class="plan-iva">+ IVA (13%)</div>
       <div class="plan-hours"><span class="dot"></span>Hasta 25 horas/mes</div>
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>Facturación GTI — 25 documentos</li>
-        <li>Gestión de agenda y correo (5 días/sem)</li>
+        <li>Gestión de agenda y correo (5 días/sem · máx. 30 correos/mes)</li>
         <li>Control de proveedores (hasta 20)</li>
         <li>Organización de archivos — continua</li>
         <li>Tramitología — 3 trámites/mes</li>
@@ -1278,14 +1430,15 @@ footer {
       <div class="plan-badge">⭐ Recomendado</div>
       <div class="plan-name">Pro</div>
       <div class="plan-tagline">"Blindaje y crecimiento"</div>
-      <div class="plan-price-usd" style="color:white"><sup style="color:rgba(255,255,255,0.5)">$</sup>720<small style="font-size:1rem;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-weight:300;">/mes</small></div>
-      <div class="plan-price-crc">₡374,400 / mes</div>
+      <div class="plan-price-usd" style="color:white"><sup style="color:rgba(255,255,255,0.5)">$</sup>725<small style="font-size:1rem;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-weight:300;">/mes</small></div>
+      <div class="plan-price-crc">₡405,600 / mes</div>
       <div class="plan-iva">+ IVA (13%)</div>
       <div class="plan-hours"><span class="dot"></span>Hasta 40 horas/mes</div>
       <div class="plan-divider"></div>
       <ul class="plan-features">
         <li>Facturación GTI — 40 documentos</li>
         <li>Gestión de cobro activa (hasta 20 facturas)</li>
+        <li>Gestión de agenda y correo (máx. 40 correos/mes)</li>
         <li>Planillas CCSS (SICERE) e INS</li>
         <li>Gestión de CRM y cotizaciones (hasta 15)</li>
         
@@ -1309,6 +1462,7 @@ footer {
       <ul class="plan-features">
         <li>Facturación GTI — 60 documentos</li>
         <li>Gestión integral de salarios (hasta 10)</li>
+        <li>Gestión de agenda y correo (máx. 50 correos/mes)</li>
         <li>Cuentas por pagar (hasta 25 facturas)</li>
         <li>Informe de flujo de caja mensual</li>
         <li>Tramitología prioritaria — 8 trámites</li>
@@ -1322,6 +1476,102 @@ footer {
   </div>
 
   <p class="plan-note">* Todos los planes pueden ajustarse a las necesidades del cliente · Excedentes cotizados por unidad · Contrato mínimo 3 meses</p>
+</section>
+
+
+<!-- ARMÁ TU PLAN -->
+<section id="custom-plan">
+  <div class="custom-inner">
+    <div class="custom-header reveal">
+      <div class="section-label">¿No encontraste tu plan?</div>
+      <h2 class="section-title">Armá tu <em>plan a medida</em></h2>
+      <p class="section-desc">Seleccioná solo los servicios que necesitás y te cotizamos un plan personalizado. Sin pagar por lo que no usás.</p>
+    </div>
+
+    <div class="services-selector" id="servicesSelector">
+      <div class="service-item reveal" onclick="toggleService(this, 'Facturación Electrónica GTI')">
+        <div class="service-check">✓</div>
+        <div class="service-info">
+          <div class="service-item-name">🧾 Facturación Electrónica GTI</div>
+          <div class="service-item-desc">Emisión y envío de facturas electrónicas ante Hacienda</div>
+        </div>
+      </div>
+      <div class="service-item reveal" onclick="toggleService(this, 'Gestión de Cobro Activo')">
+        <div class="service-check">✓</div>
+        <div class="service-info">
+          <div class="service-item-name">💰 Gestión de Cobro Activo</div>
+          <div class="service-item-desc">Seguimiento de cartera y contacto con clientes morosos</div>
+        </div>
+      </div>
+      <div class="service-item reveal" onclick="toggleService(this, 'Planillas CCSS e INS (SICERE)')">
+        <div class="service-check">✓</div>
+        <div class="service-info">
+          <div class="service-item-name">📋 Planillas CCSS e INS</div>
+          <div class="service-item-desc">Presentación mensual en SICERE y pólizas del INS</div>
+        </div>
+      </div>
+      <div class="service-item reveal" onclick="toggleService(this, 'Gestión de Agenda y Correo')">
+        <div class="service-check">✓</div>
+        <div class="service-info">
+          <div class="service-item-name">🗓️ Gestión de Agenda y Correo</div>
+          <div class="service-item-desc">Organización de calendario y atención de correos</div>
+        </div>
+      </div>
+      <div class="service-item reveal" onclick="toggleService(this, 'Control de Proveedores y Compras')">
+        <div class="service-check">✓</div>
+        <div class="service-info">
+          <div class="service-item-name">🏦 Control de Proveedores</div>
+          <div class="service-item-desc">Gestión de cuentas por pagar y pagos a proveedores</div>
+        </div>
+      </div>
+      <div class="service-item reveal" onclick="toggleService(this, 'Gestión de CRM y Cotizaciones')">
+        <div class="service-check">✓</div>
+        <div class="service-info">
+          <div class="service-item-name">📊 CRM y Cotizaciones</div>
+          <div class="service-item-desc">Actualización de CRM y elaboración de cotizaciones</div>
+        </div>
+      </div>
+      <div class="service-item reveal" onclick="toggleService(this, 'Gestión de Planilla Salarial')">
+        <div class="service-check">✓</div>
+        <div class="service-info">
+          <div class="service-item-name">👥 Planilla Salarial</div>
+          <div class="service-item-desc">Cálculo de salarios, deducciones y liquidaciones</div>
+        </div>
+      </div>
+      <div class="service-item reveal" onclick="toggleService(this, 'Tramitología y Formularios')">
+        <div class="service-check">✓</div>
+        <div class="service-info">
+          <div class="service-item-name">📁 Tramitología y Formularios</div>
+          <div class="service-item-desc">Gestión de trámites ante instituciones públicas</div>
+        </div>
+      </div>
+      <div class="service-item reveal" onclick="toggleService(this, 'Organización de Archivos Digitales')">
+        <div class="service-check">✓</div>
+        <div class="service-info">
+          <div class="service-item-name">🗂️ Archivos Digitales</div>
+          <div class="service-item-desc">Organización y gestión de documentos digitales</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="select-hint">Hacé clic en los servicios que necesitás para seleccionarlos</p>
+
+    <div class="custom-extra reveal" style="background:white;border:1.5px solid var(--border);padding:1.5rem 2rem;margin-top:1rem;margin-bottom:1rem;">
+      <label style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);font-weight:600;display:block;margin-bottom:0.6rem;">¿Necesitás algo que no está en la lista?</label>
+      <textarea id="customExtra" placeholder="Describí aquí las tareas o servicios específicos que necesitás y que no aparecen arriba..." style="width:100%;border:1.5px solid var(--border);border-radius:2px;padding:0.8rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;color:#2d2d2d;resize:vertical;min-height:80px;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#2a9d8f'" onblur="this.style.borderColor='#e2eceb'"></textarea>
+    </div>
+
+    <div class="custom-footer reveal">
+      <div class="custom-selected-count">
+        <strong id="selectedCount">0</strong> servicios seleccionados
+        <div style="font-size:0.7rem;margin-top:0.2rem;color:var(--carbon-lite)">Seleccioná al menos 1 para continuar</div>
+      </div>
+      <a id="customCta" class="custom-cta disabled" href="#" onclick="return sendToWhatsApp(event)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Solicitar cotización
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- PROCESO -->
@@ -1415,7 +1665,7 @@ footer {
               <option value="">Seleccioná un plan</option>
               <option>Starter — $280/mes</option>
               <option>Básico — $480/mes</option>
-              <option>Pro — $720/mes</option>
+              <option>Pro — $780/mes</option>
               <option>Élite — $1,150/mes</option>
               <option>No lo sé aún / Necesito orientación</option>
             </select>
@@ -1451,6 +1701,56 @@ footer {
 </footer>
 
 <script>
+
+// Custom plan selector
+const selectedServices = new Set();
+
+function toggleService(el, serviceName) {
+  if (selectedServices.has(serviceName)) {
+    selectedServices.delete(serviceName);
+    el.classList.remove('selected');
+  } else {
+    selectedServices.add(serviceName);
+    el.classList.add('selected');
+  }
+  updateCustomCta();
+}
+
+function updateCustomCta() {
+  const count = selectedServices.size;
+  document.getElementById('selectedCount').textContent = count;
+  const extra = document.getElementById('customExtra') ? document.getElementById('customExtra').value.trim() : '';
+  const cta = document.getElementById('customCta');
+  if (count > 0 || extra.length > 0) {
+    cta.classList.remove('disabled');
+  } else {
+    cta.classList.add('disabled');
+  }
+}
+
+// Also enable CTA when typing in extra field
+document.addEventListener('DOMContentLoaded', function() {
+  const extraField = document.getElementById('customExtra');
+  if (extraField) extraField.addEventListener('input', updateCustomCta);
+});
+
+function sendToWhatsApp(e) {
+  if (selectedServices.size === 0 && !document.getElementById('customExtra').value.trim()) return false;
+  const extra = document.getElementById('customExtra').value.trim();
+  let msg = 'Hola, me interesa armar un plan personalizado con Leading Back Office Services.';
+  if (selectedServices.size > 0) {
+    msg += '\n\nServicios que necesito:\n' +
+    Array.from(selectedServices).map((s, i) => (i+1) + '. ' + s).join('\n');
+  }
+  if (extra) {
+    msg += '\n\nAdemás necesito:\n' + extra;
+  }
+  msg += '\n\n¿Podrían cotizarme un plan a medida?';
+  window.open('https://wa.me/50670150966?text=' + encodeURIComponent(msg), '_blank');
+  return false;
+}
+
+
 // Nav scroll
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
