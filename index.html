@@ -1388,29 +1388,30 @@ footer {
     <div class="contacto-form reveal">
       <div class="form-title">Solicitá tu consulta</div>
       <div id="formContainer">
-        <form id="gform" target="hidden_iframe" onsubmit="handleSubmit()" method="POST"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSd5PkTFb6mk9rP-Se8I6TMmYoA4Qz5qLuAda-qMClUH1okFlg/formResponse">
+        <form id="gform" onsubmit="handleSubmit()" method="POST"
+          action="https://formspree.io/f/mpqnlnwr">
+          <input type="hidden" name="_subject" value="Nueva consulta — Leading Back Office Services">
           <div class="form-row">
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" name="entry.1774460953" placeholder="Tu nombre" required>
+              <input type="text" name="nombre" placeholder="Tu nombre" required>
             </div>
             <div class="form-group">
               <label>Empresa / Negocio</label>
-              <input type="text" name="entry.478737685" placeholder="Nombre del negocio" required>
+              <input type="text" name="empresa" placeholder="Nombre del negocio" required>
             </div>
           </div>
           <div class="form-group">
             <label>Correo electrónico</label>
-            <input type="email" name="entry.1286936364" placeholder="correo@empresa.com" required>
+            <input type="email" name="email" placeholder="correo@empresa.com" required>
           </div>
           <div class="form-group">
             <label>Teléfono</label>
-            <input type="tel" name="entry.1720708206" placeholder="8888-8888" required>
+            <input type="tel" name="telefono" placeholder="8888-8888" required>
           </div>
           <div class="form-group">
             <label>Plan de interés</label>
-            <select name="entry.1874592698" required>
+            <select name="plan" required>
               <option value="">Seleccioná un plan</option>
               <option>Starter — $280/mes</option>
               <option>Básico — $480/mes</option>
@@ -1421,11 +1422,10 @@ footer {
           </div>
           <div class="form-group">
             <label>¿Cómo podemos ayudarte?</label>
-            <textarea name="entry.1264587615" placeholder="Contanos brevemente sobre tu negocio y las tareas que querés delegar..." required></textarea>
+            <textarea name="mensaje" placeholder="Contanos brevemente sobre tu negocio y las tareas que querés delegar..." required></textarea>
           </div>
           <button type="submit" class="form-submit">Enviar solicitud →</button>
         </form>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
       </div>
       <div class="form-success" id="formSuccess">
         <div style="font-size:2.5rem;margin-bottom:1rem;">✓</div>
@@ -1485,7 +1485,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Google Forms submit
+// Formspree submit
 function handleSubmit() {
   setTimeout(function() {
     document.getElementById('formContainer').style.display = 'none';
