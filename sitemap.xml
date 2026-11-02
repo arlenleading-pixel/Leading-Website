@@ -18,4 +18,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://leadingcrc.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://leadingcrc.com/"/>
   </url>
+  <url>
+    <loc>https://leadingcrc.com/planillas-costa-rica/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
