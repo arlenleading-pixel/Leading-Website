@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leading | Su Departamento Administrativo en Outsourcing para Pymes en Costa Rica</title>
 <meta name="description" content="Leading es su departamento administrativo completo en outsourcing para pymes en Costa Rica: facturación electrónica, planillas CCSS, cobros y trámites, sin contratar personal. Enfóquese en crecer.">
+<link rel="canonical" href="https://leadingcrc.com/">
+<link rel="alternate" hreflang="es" href="https://leadingcrc.com/">
+<link rel="alternate" hreflang="en" href="https://leadingcrc.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://leadingcrc.com/">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1279,7 +1283,14 @@ footer {
   .services-selector { grid-template-columns: 1fr; }
 }
 
+
+.lang-sel { display:flex; align-items:center; gap:.4rem; color:var(--carbon-lite); font-size:.8rem; }
+.nav-links .lang-sel a { font-size:.75rem; }
+.nav-links .lang-sel a.active { color:var(--teal); font-weight:700; }
+.lang-mobile { display:none; text-decoration:none; font-size:.75rem; font-weight:600; letter-spacing:.1em; color:var(--teal); border:1px solid var(--teal); padding:.25rem .6rem; border-radius:2px; }
+@media (max-width: 900px) { .lang-mobile { display:inline-block; margin-left:auto; margin-right:1rem; } .nav-links .lang-sel { display:none; } }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Leading Back Office Services","alternateName":"Leading","url":"https://leadingcrc.com/","email":"arlen.leading@gmail.com","areaServed":"CR","description":"Departamento administrativo virtual en outsourcing para pymes en Costa Rica"}</script>
 </head>
 <body>
 
@@ -1296,7 +1307,9 @@ footer {
     <li><a href="#custom-plan">Arme su departamento</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+    <li class="lang-sel"><a href="/" hreflang="es" lang="es" class="active">ES</a><span>/</span><a href="/en/" hreflang="en" lang="en">EN</a></li>
   </ul>
+  <a class="lang-mobile" href="/en/" hreflang="en" lang="en">EN</a>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
